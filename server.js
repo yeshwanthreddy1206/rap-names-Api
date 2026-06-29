@@ -31,7 +31,8 @@ app.get('/', (request, response)=>{
 })
 
 app.get('/api/:rapperName', (request, response)=>{
-    const rappersNames = request.params.rapperName.toLowerCase()
+    const rappersNames = request.params.rapperName.toLowerCase().replace(/\s+/g, '')
+
     if(rappers[rappersNames]){
         response.json(rappers[rappersNames])
     }else{
@@ -41,7 +42,7 @@ app.get('/api/:rapperName', (request, response)=>{
     // response.json(rappers)
 })
 
-app.listen( PORT, ()=>{
+app.listen( process.env.PORT || PORT, ()=>{
     console.log(`The server is running on port ${PORT}, Go catch it! `)
 })
 
