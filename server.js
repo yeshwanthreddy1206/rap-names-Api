@@ -3,17 +3,17 @@ const app = express()
 const PORT = 8000
 
 const rappers = {
-    'roll rida' :{
+    'rollrida' :{
         Age : 29,
         BirthName : 'roll rida',
         BirthLocation : 'Hyderabad, India'
     },
-     'hanuman kind' :{
+     'hanumankind' :{
         Age : 32,
         BirthName : 'Sooraj Cherukat',
         BirthLocation : 'Kondotty, Malappuram, Kerala, India'
     },
-     'karan aujla' :{
+     'karanaujla' :{
         Age : 32,
         BirthName : 'Jaskaran Singh Aujla',
         BirthLocation : 'Ludhiana district, Punjab, India'
@@ -31,7 +31,7 @@ app.get('/', (request, response)=>{
 })
 
 app.get('/api/:rapperName', (request, response)=>{
-    const rappersNames = request.params.rapperName.toLowerCase().replace(/\s+/g, ' ')
+    const rappersNames = request.params.rapperName.toLowerCase().replace(/\s+/g, '')
 
     if(rappers[rappersNames]){
         response.json(rappers[rappersNames])
