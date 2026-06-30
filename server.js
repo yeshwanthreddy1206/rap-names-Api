@@ -3,7 +3,7 @@ const app = express()
 const cors = require('cors')
 const PORT = 8000
 
-app.use(core())
+app.use(cors())
 
 const rappers = {
     'rollrida' :{
