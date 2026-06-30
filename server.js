@@ -35,8 +35,8 @@ app.get('/', (request, response)=>{
 })
 
 app.get('/api/:rapperName', (request, response)=>{
-    const rappersNames = request.params.rapperName.toLowerCase()
-// .replace(/\s+/g, '')
+    const rappersNames = request.params.rapperName.toLowerCase().replace(/\s+/g, '')
+
     if(rappers[rappersNames]){
         response.json(rappers[rappersNames])
     }else{
