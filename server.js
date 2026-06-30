@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+app.use(express.static(__dirname))
 const cors = require('cors')
 const PORT = 8000
 
